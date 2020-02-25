@@ -1,3 +1,98 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local owlhubsexyaf = Instance.new("ScreenGui")
+local circle = Instance.new("ImageLabel")
+local logo = Instance.new("ImageLabel")
+local uwu = Instance.new("TextLabel")
+
+--Properties:
+
+owlhubsexyaf.Name = "owlhubsexyaf"
+owlhubsexyaf.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+circle.Name = "circle"
+circle.Parent = owlhubsexyaf
+circle.AnchorPoint = Vector2.new(0.5, 0.5)
+circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+circle.BackgroundTransparency = 1.000
+circle.ClipsDescendants = true
+circle.Position = UDim2.new(0.5, 0, 0.5, 0)
+circle.Image = "rbxassetid://200182847"
+circle.ImageColor3 = Color3.fromRGB(18, 18, 18)
+
+logo.Name = "logo"
+logo.Parent = circle
+logo.AnchorPoint = Vector2.new(0.5, 0.5)
+logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+logo.BackgroundTransparency = 1.000
+logo.ClipsDescendants = true
+logo.Position = UDim2.new(0.5, 0, 0.5, 0)
+logo.Size = UDim2.new(0, 150, 0, 150)
+logo.ZIndex = 2
+logo.Image = "http://www.roblox.com/asset/?id=4711644647"
+
+uwu.Name = "uwu"
+uwu.Parent = circle
+uwu.AnchorPoint = Vector2.new(0.5, 1)
+uwu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+uwu.BackgroundTransparency = 1.000
+uwu.Position = UDim2.new(0.5, 0, 0.912, 0)
+uwu.Size = UDim2.new(0, 105, 0, 28)
+uwu.Text = "DeadHub"
+uwu.TextColor3 = Color3.fromRGB(255, 255, 255)
+uwu.TextSize = 14.000
+
+-- Scripts:
+
+local function JFJJJ_fake_script() -- uwu.LocalScript 
+	local script = Instance.new('LocalScript', uwu)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	
+	counter = 0
+	
+	while wait(0.1)do
+	 script.Parent.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	 
+	 counter = counter + 0.01
+	end
+end
+coroutine.wrap(JFJJJ_fake_script)()
+local function FYJYZ_fake_script() -- owlhubsexyaf.LocalScript 
+	local script = Instance.new('LocalScript', owlhubsexyaf)
+
+	local owo = script.Parent.circle
+	
+	if game:GetService("RunService"):IsStudio() then repeat wait() until game:IsLoaded() else print('free sex') end
+	wait(1)
+	owo:TweenPosition(UDim2.new(0.5,0,0.5,0),Enum.EasingDirection.In,Enum.EasingStyle.Linear,.7,false,function()
+		owo:TweenSize(UDim2.new(0,250,0,250),Enum.EasingDirection.In,Enum.EasingStyle.Linear,.7,false,function() 
+			wait(3)
+			owo:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.In,Enum.EasingStyle.Linear,.7,false,function()
+				print("yes")
+			end)
+		end)
+	end)
+end
+coroutine.wrap(FYJYZ_fake_script)()
+
+game.StarterGui:SetCore("SendNotification", {
+Title = "Welcome "..game.Players.LocalPlayer.Name; -- the title (ofc)
+Text = "Thanks for using DeadHub."; -- what the text says (ofc)
+Duration = 5; -- how long the notification should in secounds
+})
+wait(6)
+game.StarterGui:SetCore("SendNotification", {
+Title = "Loaded"; -- the title (ofc)
+Text = ""; -- what the text says (ofc)
+Duration = 5; -- how long the notification should in secounds
+})
+
+
+
 warn("Waiting for Humanoid...")
 repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 warn("Humanoid has been recorded and loaded!")
@@ -385,8 +480,14 @@ end)
 
 
 
-misc = lib:CreateWindow("Misc")
-
+misc = lib:CreateWindow("Credits")
+misc:Section('Credits')
+misc:Label("UI - Wally")
+misc:Label("Helper - Kin")
+misc:Label("Scripts - SelfMade/V3RM")
+misc:Label("Obf - Sovw")
+misc:Label("DeadHub - Vuax")
+misc:Section('Extras')
 misc:Button("Destroy UI", function()
 for i,k in pairs(game:GetService("CoreGui"):GetChildren()) do
     if k:FindFirstChild("pcheck(9)") then
